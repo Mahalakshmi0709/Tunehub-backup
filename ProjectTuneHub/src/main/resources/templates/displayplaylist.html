@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+     <th>id</th>
+     <th>Name</th>
+     </tr>
+    </thead>
+    
+    <tbody>
+    <tr th:each="p:${plays}">
+           <td th:text="${p.id}"></td>
+           <td >
+           
+           <ul>
+           <li th:each="song:${p.songs}">
+           <span th:text="${song.name}"></span>
+           
+           <audio controls>
+           <source th:src="${song.link}">
+           </audio>
+           </li>
+           </ul>
+           </td>
+           </tr>
+           
+    
+    
+    </tbody>
+    
+    </table>
+
+</body>
+</html>
